@@ -12,7 +12,29 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primarySwatch: Colors.deepPurple,
+        inputDecorationTheme: InputDecorationTheme(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          labelStyle: const TextStyle(fontSize: 16),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.deepPurple,
+            foregroundColor: Colors.white,
+            minimumSize: const Size(double.infinity, 48),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+          ),
+        ),
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(
+            foregroundColor: Colors.deepPurple,
+            textStyle: const TextStyle(fontSize: 16),
+          )
+        )
       ),
       home: const LoginScreen(),
     );
